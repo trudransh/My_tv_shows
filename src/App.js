@@ -28,16 +28,22 @@ function App() {
       });
   }, []);
 
+  shows.forEach(show => {
+    console.log(show.name);
+    console.log(show.image?.medium);
+    console.log(show.image?.original);
+  });
+
   return (
     <Router>
       <div className="App">
         <Routes>
           <Route exact path="/" element={
-            <>
+            <div className='main'>
               {isLoading && <div>Loading...</div>}
               {error && <div>Error: {error}</div>}
               {!isLoading && !error && <ShowListComponent shows={shows} />}
-            </>
+            </div>
           } />
           <Route path="/show/:id" element={<ShowDetail />} />
         </Routes>

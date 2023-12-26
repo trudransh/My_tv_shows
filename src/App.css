@@ -1,17 +1,4 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   background-color: #282c34;
@@ -24,15 +11,56 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.show-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between items */
+  padding: 20px;
+  background: linear-gradient(136deg, #433b3b 1%, #2633e7 80.65%, #AC94E7 99.39%), #FFF;
+ 
+}
+.show-item img{
+  width: 250px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.show-item {
+  /* background-color: #1d0882; Optional: for better visibility */
+  border-radius: 10px; /* Optional: for rounded corners */
+  overflow: hidden; /* Keeps the child elements within the boundaries of the border-radius */
+  width: 250px; /* Adjust the width as needed */
+  box-shadow: 5px 5px 20px black;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+.movie-title{
+  background: #f36987;
+  padding: 0px;
+}
+.show-item:hover {
+  transform: scale(1.05); /* Slightly enlarges the item on hover */
+}
+
+.show-item-details {
+  display: none; /* Hide details by default */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+  color: #ffffff;
+  padding: 10px;
+  text-align: center; /* Center the text */
+}
+
+
+.show-item:hover .show-item-details {
+  display: block; /* Show details on hover */
+  cursor: pointer;
+}
+
+.show-item h2 {
+  margin: -4px;
+  padding: 5px 10px; /* Padding for the title */
+  text-align: center; /* Center the title */
 }
