@@ -45,19 +45,24 @@ const ShowDetail = () => {
     setShowModal(false); // Hide the modal
   };
   return (
-    <div>
-      <h1>{show.name}</h1>
-      <p><strong>Summary:</strong> <span dangerouslySetInnerHTML={{ __html: show.summary }} /></p>
-      <p><strong>Language:</strong> {show.language}</p>
-      <p><strong>Genres:</strong> {show.genres.join(', ')}</p>
-      <p><strong>Status:</strong> {show.status}</p>
-      <p><strong>Rating:</strong> {show.rating?.average || 'N/A'}</p>
-      <button onClick={handleBookTicket}>Book Ticket</button>
-      {showModal && (
-        <Modal onClose={handleCloseModal}>
-          <BookingForm show={show} />
-        </Modal>
-      )}
+    <div className="show-detail-container">
+      <div className="show-detail-left">
+        <img src={show.image?.original || show.image?.medium} alt={show.name} className="show-detail-image" />
+      </div>
+      <div className="show-detail-right">
+        <h1>{show.name}</h1>
+        <p><strong>Summary:</strong> <span dangerouslySetInnerHTML={{ __html: show.summary }} /></p>
+        <p><strong>Language:</strong> {show.language}</p>
+        <p><strong>Genres:</strong> {show.genres.join(', ')}</p>
+        <p><strong>Status:</strong> {show.status}</p>
+        <p><strong>Rating:</strong> {show.rating?.average || 'N/A'}</p>
+        <button onClick={handleBookTicket} className="book-ticket-btn">Book Ticket</button>
+        {showModal && (
+          <Modal onClose={handleCloseModal}>
+            <BookingForm show={show} />
+          </Modal>
+        )}
+      </div>
     </div>
   );
 };
