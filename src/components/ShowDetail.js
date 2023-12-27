@@ -10,7 +10,7 @@ const ShowDetail = () => {
   const [show, setShow] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [showModal, setShowModal] = useState(false); 
+  const [showModal, setShowModal] = useState(false);
   useEffect(() => {
     const fetchShowDetails = async () => {
       setIsLoading(true);
@@ -59,7 +59,7 @@ const ShowDetail = () => {
         <button onClick={handleBookTicket} className="book-ticket-btn">Book Ticket</button>
         {showModal && (
           <Modal onClose={handleCloseModal}>
-            <BookingForm show={show} />
+            <BookingForm show={show} onClose={handleCloseModal} />
           </Modal>
         )}
       </div>

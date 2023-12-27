@@ -1,11 +1,11 @@
-/* Add this to your CSS file */
+
 
 .booking-form-container {
     background: linear-gradient(136deg, #433b3b 1%, #2633e7 80.65%, #AC94E7 99.39%), #FFF;
     padding: 20px;
     border-radius: 10px;
-    width: 50%; /* Adjust as needed */
-    margin: 0 auto; /* Center the form */
+    width: 70%; 
+    margin: 0 auto;
   }
   
   .booking-form {
@@ -47,7 +47,33 @@
   /* Responsive Design */
   @media (max-width: 768px) {
     .booking-form-container {
-      width: 80%; /* Wider on smaller screens */
+      width: 80%; 
     }
+  }
+  
+  .confirmation-container {
+    position: relative;
+    text-align: center;
+    /* Add any additional styling you want for this container */
+  }
+  
+  .close-button {
+    position: absolute;
+    top: -34px; /* Adjust as needed */
+    right: -12px; /* Adjust as needed */
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white; /* or any color that matches your design */
+  }
+  
+  .close-button:hover {
+    color: #2633e7; /* or any hover color you prefer */
+  }
+  
+  /* Add this to ensure the button does not have default browser styles */
+  .close-button:focus {
+    outline: none;
   }
   
